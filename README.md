@@ -57,3 +57,15 @@ public function boot()
 ```
 
 Finally, in your `config/auth.php` configuration file, you should set the driver option of the `api` authentication guard to `passport`. This will instruct your application to use Passport's `TokenGuard` when authenticating incoming API requests:
+
+```
+'api' => [
+    'driver' => 'passport',
+    'provider' => 'users',
+    'hash' => false,
+]
+```
+
+- Create resourceful controller
+
+```php artisan make:controller Api/UserController --resource```
